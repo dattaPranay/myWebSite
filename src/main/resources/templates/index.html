@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Pranay Kumar Datta | Personal Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">Pranay Kumar Datta</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Hello, I'm Pranay!</h1>
+        <p>Welcome to my personal space where I share my passions, adventures, and stories.</p>
+        <a href="#about" class="btn">Get to Know Me</a>
+    </div>
+</section>
+
+<!-- About Me Section -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="/images/me.jpg" alt="Pranay Kumar Datta Photo">
+        <p>
+            I'm Pranay, a software developer by profession and an enthusiast of badminton and traveling. When I'm not coding, you can find me on the badminton court or exploring new destinations.
+        </p>
+    </div>
+</section>
+
+<!-- Hobbies Section -->
+<section id="hobbies" class="hobbies">
+    <h2>My Hobbies</h2>
+    <div class="hobbies-content">
+        <div class="hobby">
+            <h3>Badminton</h3>
+            <p>
+                Badminton is more than a sport to me; it's a passion that energizes and inspires. Whether playing competitively or just for fun, it keeps me active and engaged.
+            </p>
+        </div>
+        <div class="hobby">
+            <h3>Traveling</h3>
+            <p>
+                Traveling allows me to experience new cultures, meet interesting people, and see the beauty of our world. Each trip brings new stories and memories.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Display success message if available -->
+<div th:if="${successMessage}" class="success-message">
+    <p th:text="${successMessage}"></p>
+</div>
+
+<!-- Display error message if available -->
+<div th:if="${errorMessage}" class="error-message">
+    <p th:text="${errorMessage}"></p>
+</div>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p>If you'd like to connect or have any questions, feel free to reach out by filling out the form below.</p>
+    <form action="/contact" method="post" class="contact-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email" />
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Pranay Kumar Datta. All rights reserved.</p>
+</footer>
+</body>
+</html>
