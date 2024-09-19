@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +20,17 @@ public class General {
         return "index";
     }
 
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        // Perform health checks here (e.g., database connectivity, external services)
+        boolean isHealthy = true; // Replace with actual health check logic
 
+        if (isHealthy) {
+            return ResponseEntity.ok("OK");
+        } else {
+            return ResponseEntity.status(503).body("Service Unavailable");
+        }
+    }
 
     @Autowired
     private JavaMailSender mailSender;
