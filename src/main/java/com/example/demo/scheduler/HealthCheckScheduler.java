@@ -20,7 +20,7 @@ public class HealthCheckScheduler {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Scheduled(cron = "0 0/6 * * * ?")
+    @Scheduled(cron = "0 0/3 * * * ?")
     public void checkHealth() {
         boolean success = makeHttpCall();
         logger.info("scheduler invoked to " + URL);
